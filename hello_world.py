@@ -1,5 +1,7 @@
 import cudaq
-cudaq.set_target('nvidia', option="mgpu")
+cudaq.set_target('nvidia', option='mgpu,fp32')
+
+# cudaq.set_target('nvidia')
 
 # import os 
 # os.environ["CUDAQ_MAX_CPU_MEMORY_GB"] = "NONE"
@@ -12,7 +14,7 @@ cudaq.mpi.initialize()
 
 print('mpi initialized?', cudaq.mpi.is_initialized())
 
-n_qubits = 30
+n_qubits = 34
 
 @cudaq.kernel
 def kernel(n_qubits:int):

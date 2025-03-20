@@ -6,14 +6,12 @@ from cudaq import spin
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 import numpy as np
-import os 
-os.environ["CUDAQ_MAX_CPU_MEMORY_GB"] = "NONE"
-os.environ["CUDAQ_MAX_GPU_MEMORY_GB"] = "NONE"
+np.random.seed(42)
 
 cudaq.set_target("nvidia")
 
 # Number of hydrogen atoms.
-hydrogen_count = 20
+hydrogen_count = 10
 
 # Distance between the atoms in Angstroms.
 bond_distance = 0.7474
@@ -66,7 +64,6 @@ def callback(xk):
 
 
 # Initial variational parameters.
-np.random.seed(42)
 x0 = np.random.normal(0, np.pi, parameter_count)
 
 # Use the scipy optimizer to minimize the function of interest
