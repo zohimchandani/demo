@@ -15,7 +15,7 @@ print('mpi initialized?', cudaq.mpi.is_initialized())
 n_qubits = 35
 
 @cudaq.kernel
-def kernel(n_qubits:int):
+def kernel(n_qubits:iant):
     
     qubits = cudaq.qvector(n_qubits)
     
