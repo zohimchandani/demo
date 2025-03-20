@@ -12,7 +12,7 @@ cudaq.mpi.initialize()
 
 print('mpi initialized?', cudaq.mpi.is_initialized())
 
-n_qubits = 34
+n_qubits = 30
 
 @cudaq.kernel
 def kernel(n_qubits:int):
