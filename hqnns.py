@@ -8,6 +8,7 @@
 
 import cudaq
 from cudaq import spin
+import time 
 
 import matplotlib.pyplot as plt
 
@@ -33,6 +34,7 @@ cudaq.set_target("qpp-cpu")
 
 # cudaq.set_target("nvidia")
 # device = torch.device("cuda:0")
+print(device)
 
 # %%
 def prepare_data(target_digits, sample_count, test_size):
@@ -85,7 +87,7 @@ def prepare_data(target_digits, sample_count, test_size):
 # %%
 # Classical parameters.
 
-sample_count = 1000  # Total number of images to use.
+sample_count = 500  # Total number of images to use.
 target_digits = [5, 6]  # Hand written digits to classify.
 test_size = 30  # Percentage of dataset to be used for testing.
 classification_threshold = 0.5  # Classification boundary used to measure accuracy.
@@ -263,7 +265,7 @@ testing_accuracy = []
 
 hybrid_model.train()
 for epoch in range(epochs):
-    print('epoch', epoch)
+    start_time = time.time()
 
     optimizer.zero_grad()
 
@@ -277,6 +279,10 @@ for epoch in range(epochs):
 
     training_accuracy.append(accuracy_score(y_train, y_hat_train))
     training_cost.append(train_cost.item())
+
+    end_time = time.time()
+    print(f"Epoch {epoch} completed in {end_time - start_time:.2f} seconds")
+
 
     hybrid_model.eval()
     with torch.no_grad():
