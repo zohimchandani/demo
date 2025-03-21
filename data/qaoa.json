@@ -1,0 +1,48 @@
+{
+  "30": {
+    "5179c2c06a73a83465f039b93d140dcc11f6836d5a7e0daf90e0cd4a54b9e864": {
+      "transpile": 0.055020797066390514,
+      "cpu_time": 0.1305790119804442,
+      "cpu_phy_mem": 615.83,
+      "cpu_used_mem": 20.18,
+      "cpu_phy_cores": 72,
+      "cpu_log_cores": 72,
+      "cpu_current_freq": 4390.62,
+      "gpu_time": 0.13060003662109376,
+      "gpu_total_mem": 102.01,
+      "gpu_clock_freq": 1980.0,
+      "gpu_multiprocessor_num": 132,
+      "frontend": {
+        "name": "qiskit",
+        "version": "1.4.0"
+      },
+      "backend": {
+        "name": "cusvaer",
+        "version": "0.6.0",
+        "ngpus": 1,
+        "ncputhreads": 72,
+        "nshots": 1000,
+        "nfused": 5,
+        "precision": "single",
+        "with_mpi": true,
+        "cusvaer_global_index_bits": [
+          1,
+          1
+        ],
+        "cusvaer_p2p_device_bits": 0
+      },
+      "glue_layer": {
+        "name": null,
+        "version": null
+      },
+      "run_env": {
+        "hostname": "lego-cg1-qs-147",
+        "cpu_name": "unknown",
+        "gpu_name": "NVIDIA GH200 480GB",
+        "gpu_driver_ver": 12080,
+        "gpu_runtime_ver": 12060,
+        "nvml_driver_ver": "565.56"
+      }
+    }
+  }
+}
